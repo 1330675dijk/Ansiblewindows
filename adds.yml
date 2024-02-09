@@ -1,0 +1,7 @@
+---
+
+- name: adds
+  hosts: winservers
+  gather_facts: false
+  roles:
+    - ADDS
