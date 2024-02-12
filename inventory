@@ -1,6 +1,14 @@
 [winservers]
-192.168.99.3 ansible_user: Administrator ansible_password: Welkom123456 ansible_connection: winrm ansible_winrm_transport: basic ansible_winrm_server_cert_validation=ignore
+192.168.99.3 
 
+[winservers:vars]
+ansible_user: Administrator 
+ansible_password: Welkom123456 
+ansible_port=5985
+ansible_connection: winrm 
+ansible_winrm_scheme=https
+ansible_winrm_server_cert_validation=ignore
+ansible_winrm_kerberos_delegation=true
 
 [clients]
 192.168.99.4
