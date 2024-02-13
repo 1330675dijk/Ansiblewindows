@@ -7,15 +7,6 @@
     state: present
 
 - name: Promote server to domain controller
-  win_domain_controller:
-    domain_name: "{{ domainname }}" 
-    domain_user: "{{ domainuser }}" 
-    domain_pass: "{{ domainpass }}" 
-    state: domain
-    install_dns: yes
-    restart: yes
-
-- name: Promote server to domain controller
   ansible.windows.win_domain_controller:
     dns_domain_name: "{{ domainname }}" 
     domain_admin_user: "{{ domainuser }}"
