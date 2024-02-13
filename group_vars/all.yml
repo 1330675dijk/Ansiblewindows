@@ -1,3 +1,5 @@
 # juiste voor variable
-
+domainname: test.net
+domainuser: Administrator
+domainpass: YourPassword
 # "{{ resource_group }}" 
