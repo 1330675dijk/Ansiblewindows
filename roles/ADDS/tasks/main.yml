@@ -6,14 +6,37 @@
     name: AD-Domain-Services
     state: present
 
+- name: Reboot server to complete feature installation
+  win_reboot:
+    reboot_timeout: 600
+    reboot_msg: "Rebooting to complete AD DS installation"
+    test_command: "Test-Path HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\ADDS"
+
 - name: Promote server to domain controller
-  win_domain_controller:
+  win_domain:
+    hostname: "{{ inventory_hostname }}"
     domain_name: "{{ domainname }}" 
     domain_user: "{{ domainuser }}" 
     domain_pass: "{{ domainpass }}" 
+    safe_mode_password: SafeModePassword
     state: domain
-    safe_mode_pass: SafeModePassword
     restart: yes
+    
+- name: Wait for server to reboot after promotion
+  wait_for:
+    timeout: 600
+    delay: 10
+    port: 5985 
+
+
+#- name: Promote server to domain controller
+#  win_domain_controller:
+#    domain_name: "{{ domainname }}" 
+#    domain_user: "{{ domainuser }}" 
+#    domain_pass: "{{ domainpass }}" 
+#    state: domain
+#    safe_mode_pass: SafeModePassword
+#    restart: yes
 
 #- name: Configure DNS settings
 #  win_dns_client:
