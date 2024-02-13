@@ -13,12 +13,9 @@
     domain_pass: "{{ domainpass }}" 
     state: domain
     install_dns: yes
+    restart: yes
 
-- name: Reboot the server after promoting to domain controller
-  win_reboot:
-    msg: "Rebooting for changes to take effect"
-    reboot_timeout: 300
-    post_reboot_delay: 60
+
 
 #- name: Promote server to domain controller
 #  win_domain_controller:
