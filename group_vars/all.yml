@@ -1,6 +1,6 @@
 # juiste voor variable
 domainname: test.net
-domainuser: Administrator
+domainuser: Administrator@test.net
 domainpass: YourPassword
 inventory_hostname: testnaam
 # "{{ resource_group }}" 
