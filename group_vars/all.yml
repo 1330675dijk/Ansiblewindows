@@ -1,6 +1,6 @@
 # juiste voor variable
 domainname: test.net
 domainuser: Administrator@test.net
-domainpass: YourPassword
+domainpass: Welkom123456
 inventory_hostname: testnaam
 # "{{ resource_group }}" 
