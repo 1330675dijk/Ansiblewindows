@@ -1,6 +1,4 @@
 ---
-# tasks file for ADDS
-
 - name: Install AD DS role
   win_feature:
     name: AD-Domain-Services
@@ -14,25 +12,3 @@
     safe_mode_password: "{{ domainpass }}" 
     state: "domain_controller"
     reboot: true
-  #register: active_directory_controllers
-
-#- name: reboot once DC created
-#  win_reboot:
-#  when: active_directory_controllers.reboot_required
-
-#- name: Promote server to domain controller
-#  win_domain_controller:
-#    domain_name: "{{ domainname }}" 
-#    domain_user: "{{ domainuser }}" 
-#    domain_pass: "{{ domainpass }}" 
-#    state: domain
-#    safe_mode_pass: SafeModePassword
-#    restart: yes
-
-#- name: Configure DNS settings
-#  win_dns_client:
-#    adapters:
-#      - name: "*"
-#        ipv4_addresses:
-#          - 127.0.0.1
-#ansible.windows.win_domain_controller:
