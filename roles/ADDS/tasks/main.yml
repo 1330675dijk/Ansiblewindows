@@ -12,7 +12,7 @@
     domain_admin_user: "{{ domainuser }}"
     domain_admin_password: "{{ domainpass }}" 
     safe_mode_password: "{{ domainpass }}" 
-    state: domain_controller
+    state: "domain_controller"
 
 
 #- name: Promote server to domain controller
