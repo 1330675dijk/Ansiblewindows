@@ -16,9 +16,9 @@
     reboot: true
   #register: active_directory_controllers
 
-- name: reboot once DC created
-  win_reboot:
-  when: active_directory_controllers.reboot_required
+#- name: reboot once DC created
+#  win_reboot:
+#  when: active_directory_controllers.reboot_required
 
 #- name: Promote server to domain controller
 #  win_domain_controller:
