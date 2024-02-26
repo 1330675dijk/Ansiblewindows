@@ -7,7 +7,7 @@
     state: present
 
 - name: Promote server to domain controller
-  ansible.windows.win_domain_controller:
+  win_domain:
     dns_domain_name: "{{ domainname }}" 
     domain_admin_user: "{{ domainuser }}"
     domain_admin_password: "{{ domainpass }}" 
@@ -30,3 +30,4 @@
 #      - name: "*"
 #        ipv4_addresses:
 #          - 127.0.0.1
+#ansible.windows.win_domain_controller:
