@@ -13,7 +13,7 @@
     domain_admin_password: "{{ domainpass }}" 
     safe_mode_password: "{{ domainpass }}" 
     state: "domain_controller"
- register: active_directory_controllers
+  register: active_directory_controllers
 
 - name: reboot once DC created
   win_reboot:
