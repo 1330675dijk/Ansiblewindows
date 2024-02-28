@@ -3,9 +3,10 @@
   win_feature:
     name: AD-Domain-Services
     state: present
-
-
-
+    restart: yes
+    include_sub_features: yes
+    include_management_tools: yes
+    
 - name: Install Windows Deployment Services
   win_feature:
     name: WDS
@@ -22,13 +23,3 @@
     safe_mode_password: "{{ domainpass }}" 
     state: "domain_controller"
     reboot: true
-
-- name: Install Remote-Server-Administration-Tools
-  win_feature:
-    name: Remote-Server-Administration-Tools
-    state: present
-    restart: yes
-    include_sub_features: yes
-    include_management_tools: yes
-
-#Windows-Deployment-Services
