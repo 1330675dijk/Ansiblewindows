@@ -8,7 +8,7 @@
 
 - name: Install Windows Deployment Services
   win_feature:
-    name: Windows-Deployment-Services
+    name: WDS
     state: present
     restart: yes
     include_sub_features: yes
@@ -30,3 +30,5 @@
     restart: yes
     include_sub_features: yes
     include_management_tools: yes
+
+#Windows-Deployment-Services
