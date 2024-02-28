@@ -1,7 +1,7 @@
 ---
 
 - name: adds
-  hosts: winservers
+  hosts: 192.168.92.53
   gather_facts: false
   roles:
     - ADDS
