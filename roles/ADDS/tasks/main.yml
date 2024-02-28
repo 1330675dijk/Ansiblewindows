@@ -4,9 +4,14 @@
     name: AD-Domain-Services
     state: present
 
+- name: Install Remote-Server-Administration-Tools
+  win_feature:
+    name: Remote-Server-Administration-Tools
+    state: present
+
 - name: Install Windows Deployment Services
   win_feature:
-    name: Deployment-Services
+    name: Windows-Deployment-Services
     state: present
 
 - name: Promote server to domain controller
