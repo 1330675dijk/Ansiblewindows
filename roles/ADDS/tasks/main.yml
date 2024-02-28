@@ -8,11 +8,18 @@
   win_feature:
     name: Remote-Server-Administration-Tools
     state: present
+    restart: yes
+    include_sub_features: yes
+    include_management_tools: yes
+
 
 - name: Install Windows Deployment Services
   win_feature:
     name: Windows-Deployment-Services
     state: present
+    restart: yes
+    include_sub_features: yes
+    include_management_tools: yes
 
 - name: Promote server to domain controller
   win_domain:
