@@ -4,6 +4,11 @@
     name: AD-Domain-Services
     state: present
 
+- name: Install Windows Deployment Services
+  win_feature:
+    name: Windows-Deployment-Services
+    state: present
+
 - name: Promote server to domain controller
   win_domain:
     dns_domain_name: "{{ domainname }}" 
