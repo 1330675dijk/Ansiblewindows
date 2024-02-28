@@ -4,7 +4,7 @@
 [winservers:vars]
 ansible_user=Administrator 
 ansible_password=Welkom123456 
-ansible_port=5985
+ansible_port=5986
 ansible_connection=winrm 
 ansible_winrm_scheme=https
 ansible_winrm_server_cert_validation=ignore
