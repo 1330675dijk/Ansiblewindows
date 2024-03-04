@@ -18,22 +18,22 @@
 
     - name: Create Windows Domain Users
       win_domain_user:
-        name: "{{ item.gebruikersnaam }}"
-        firstname: "{{item.voornaam }}"
-        surname: "{{ item.achternaam }}"
+        name: "{{ item.Gebruikersnaam }}"
+        firstname: "{{item.Voornaam }}"
+        surname: "{{ item.Achternaam }}"
         password: "Welkom123456"  # Set a secure password
         groups: "{{ item.groups|default(omit) }}"
         state: present
-        email: '"{{ item.gebruikersnaam }}"@{{ domainname }}'
+        email: '"{{ item.Gebruikersnaam }}"@{{ domainname }}'
         attributes: "{{ item.attributes|default(omit) }}"
       with_items: "{{ users_data }}"
 
 
 #    - name: Create AD Users
  #     win_domain_user:
-  #      name: "{{ item.gebruikersnaam }}"
-   #     firstname: "{{ item.voornaam }}"
-    #    surname: "{{ item.achternaam }}"
+  #      name: "{{ item.Gebruikersnaam }}"
+   #     firstname: "{{ item.Voornaam }}"
+    #    surname: "{{ item.Achternaam }}"
      #   password: "Welkom123456"  # Set a secure password
       #  street_address: "{{ item.adres }}"
        # postal_code: "{{ item.postcode }}"
