@@ -11,6 +11,7 @@
     - name: Use CSV Data as Variables
       set_fact:
         users_data: "{{ csv_content.list }}"
+      run_once: true
 
 - name: Create AD Users from CSV
   hosts: winservers
