@@ -21,9 +21,15 @@
         name: "{{ item.gebruikersnaam }}"
         password: "Welkom123456"  # Set a secure password
         state: present
-        given_name: "{{ item.voornaam }}"
+        firstname: "{{ item.voornaam }}"
         surname: "{{ item.achternaam }}"
         street_address: "{{ item.adres }}"
         postal_code: "{{ item.postcode }}"
         city: "{{ item.plaatsnaam }}"
+        domain_admin_user: "{{ domainuser }}"
+        domain_admin_password: "{{ domainpass }}" 
       with_items: "{{ users_data }}"
+
+
+
+
