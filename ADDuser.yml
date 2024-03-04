@@ -12,6 +12,10 @@
       set_fact:
         users_data: "{{ csv_content.list }}"
 
+- name: Create AD Users from CSV
+  hosts: winservers
+  gather_facts: yes
+  tasks:
     - name: Create AD Users
       win_domain_user:
         name: "{{ item.Gebruikersnaam }}"
