@@ -17,7 +17,7 @@
         users_data: "{{ csv_content.list }}"
 
     - name: Create AD Users
-      community.windows.win_domain_user:
+      win_domain_user:
         name: "{{ item.gebruikersnaam }}"
         password: "Welkom123456"  # Set a secure password
         state: present
@@ -26,5 +26,4 @@
         street_address: "{{ item.adres }}"
         postal_code: "{{ item.postcode }}"
         city: "{{ item.plaatsnaam }}"
-        ou: "OU=Users,DC=example,DC=com"  # Adjust the OU based on your AD structure
       with_items: "{{ users_data }}"
