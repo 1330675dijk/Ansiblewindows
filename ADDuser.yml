@@ -23,12 +23,8 @@
         firstname: "{{ item.Voornaam }}"
         surname: "{{ item.Achternaam }}"
         password: "Welkom123456"  # Set a secure password
-        street_address: "{{ item.Adres }}"
         postal_code: "{{ item.Postcode }}"
         city: "{{ item.Plaatsnaam }}"
         state: present
-        email: '"{{ item.Gebruikersnaam }}"@{{ domainname }}'
-        attributes: "{{ item.attributes|default(omit) }}"
-        domain_admin_user: "{{ domainuser }}"
-        domain_admin_password: "{{ domainpass }}"
+        email: '"{{ item.Gebruikersnaam }}"@{{ domainname }}"'
       with_items: "{{ hostvars['localhost']['users_data'] }}"
