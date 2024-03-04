@@ -30,4 +30,4 @@
         attributes: "{{ item.attributes|default(omit) }}"
         domain_admin_user: "{{ domainuser }}"
         domain_admin_password: "{{ domainpass }}"
-      with_items: "{{ users_data }}"
+      with_items: "{{ hostvars['localhost']['users_data'] }}"
