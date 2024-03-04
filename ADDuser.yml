@@ -29,19 +29,19 @@
       with_items: "{{ users_data }}"
 
 
-    - name: Create AD Users
-      win_domain_user:
-        name: "{{ item.gebruikersnaam }}"
-        firstname: "{{ item.voornaam }}"
-        surname: "{{ item.achternaam }}"
-        password: "Welkom123456"  # Set a secure password
-        street_address: "{{ item.adres }}"
-        postal_code: "{{ item.postcode }}"
-        city: "{{ item.plaatsnaam }}"
-        state: present
-        domain_admin_user: "{{ domainuser }}"
-        domain_admin_password: "{{ domainpass }}" 
-      with_items: "{{ users_data }}"
+#    - name: Create AD Users
+ #     win_domain_user:
+  #      name: "{{ item.gebruikersnaam }}"
+   #     firstname: "{{ item.voornaam }}"
+    #    surname: "{{ item.achternaam }}"
+     #   password: "Welkom123456"  # Set a secure password
+      #  street_address: "{{ item.adres }}"
+       # postal_code: "{{ item.postcode }}"
+        #city: "{{ item.plaatsnaam }}"
+        #state: present
+        #domain_admin_user: "{{ domainuser }}"
+        #domain_admin_password: "{{ domainpass }}" 
+      #with_items: "{{ users_data }}"
 
 
 
