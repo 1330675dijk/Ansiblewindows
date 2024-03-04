@@ -4,7 +4,7 @@
   gather_facts: false
   tasks:
     - name: Read CSV file
-      csvfile:
+      read_csv:
         path: gegevens.csv
       register: csv_data
 
