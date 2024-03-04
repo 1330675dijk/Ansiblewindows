@@ -17,7 +17,7 @@
         users_data: "{{ csv_content.list }}"
 
     - name: Create AD Users
-      win_domain:
+       microsoft.ad.user:
         name: "{{ item.gebruikersnaam }}"
         password: "Welkom123456"  # Set a secure password
         state: present
