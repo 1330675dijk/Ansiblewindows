@@ -1,0 +1,27 @@
+---
+- name: Read CSV File and Use Variables
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Read CSV file
+      csvfile:
+        path: gegevens.csv
+      register: csv_data
+
+    - name: Debug CSV Data
+      debug:
+        var: csv_data.rows
+
+    - name: Use CSV Data as Variables
+      set_fact:
+        voornaam: "{{ item.Voornaam }}"
+        achternaam: "{{ item.Achternaam }}"
+        adres: "{{ item.Adres }}"
+        postcode: "{{ item.Postcode }}"
+        plaatsnaam: "{{ item.Plaatsnaam }}"
+        gebruikersnaam: "{{ item.Gebruikersnaam }}"
+      with_items: "{{ csv_data.rows }}"
+
+    - name: Display Variables
+      debug:
+        msg: "Voornaam: {{ voornaam }}, Achternaam: {{ achternaam }}, Adres: {{ adres }}, Postcode: {{ postcode }}, Plaatsnaam: {{ plaatsnaam }}, Gebruikersnaam: {{ gebruikersnaam }}"
