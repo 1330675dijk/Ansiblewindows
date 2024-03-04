@@ -16,6 +16,10 @@
       set_fact:
         users_data: "{{ csv_content.list }}"
 
+- name: Create AD Users from CSV
+  hosts: winservers
+  gather_facts: no
+  tasks:
     - name: Create Windows Domain Users
       win_domain_user:
         name: "{{ item.Gebruikersnaam }}"
@@ -26,8 +30,6 @@
         state: present
         email: '"{{ item.Gebruikersnaam }}"@{{ domainname }}'
         attributes: "{{ item.attributes|default(omit) }}"
-      args:
-        executable: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
       with_items: "{{ users_data }}"
 
 
