@@ -1,6 +1,6 @@
 ---
 - name: Create AD Users from CSV
-  hosts: windows_servers
+  hosts: winservers
   gather_facts: no
   tasks:
     - name: Read CSV file
