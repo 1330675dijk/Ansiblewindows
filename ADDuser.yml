@@ -1,0 +1,17 @@
+---
+- name: Create AD Users from CSV
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Read CSV file
+      read_csv:
+        path: gegevens.csv
+      register: csv_content
+
+    - name: Debug CSV Data
+      debug:
+        var: csv_content
+
+    - name: Use CSV Data as Variables
+      set_fact:
+        users_data: "{{ csv_content.list }}"
