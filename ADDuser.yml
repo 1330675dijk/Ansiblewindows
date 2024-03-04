@@ -28,7 +28,7 @@
         attributes: "{{ item.attributes|default(omit) }}"
       args:
         executable: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
-    with_items: "{{ users_data }}"
+      with_items: "{{ users_data }}"
 
 
 #    - name: Create AD Users
